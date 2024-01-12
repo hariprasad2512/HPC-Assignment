@@ -39,9 +39,9 @@ void printArray(int arr[], int size) {
 }
 
 int main() {
-    // Generate an array of 1000 random numbers
+    // Generate an array of 1 million random numbers
     srand(time(NULL));
-    int n = 1000;
+    int n = 1000000;  // Increase the size of the array
     int arr[n];
 
     for (int i = 0; i < n; i++) {
@@ -49,7 +49,7 @@ int main() {
     }
 
     printf("Original array: ");
-    printArray(arr, n);
+    // printArray(arr, n);  // Commenting out to avoid printing a large array
 
     // Profiling Start
     clock_t start = clock();
@@ -57,8 +57,8 @@ int main() {
     clock_t end = clock();
     // Profiling End
 
-    printf("Sorted array: ");
-    printArray(arr, n);
+    // printf("Sorted array: ");
+    // printArray(arr, n);  // Commenting out to avoid printing a large array
 
     // Calculate the time taken for sorting
     double cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
@@ -66,3 +66,4 @@ int main() {
 
     return 0;
 }
+
